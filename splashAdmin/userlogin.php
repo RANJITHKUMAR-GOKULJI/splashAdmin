@@ -1,19 +1,49 @@
+
+<?php include 'conn.php'; ?>
+
 <?php
-mysql_connect("Server", "root", "Gen") or die("Couldn't select database.");
-mysql_select_db("generator") or die("Couldn't select database.");
+$name = $_POST['userName'];
+$pass = $_POST['userPassword'];
 
-$username = $_POST['username'];
-$password = $_POST['password'];
 
-$sql = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password' ";
-$result = mysql_query($sql) or die(mysql_error());
-$numrows = mysql_num_rows($result);
-if($numrows > 0)
-   {
-    echo 'Your in';
-   }
-else
-   {
-    echo 'Your not in';
-   }
-   ?>
+if($conn->connect_error)
+{
+    die("connection failed:".$conn->connect_error);
+    
+}
+else{
+  $sql = "SELECT * FROM `users` WHERE `user_name` = '$name' AND `password` = '$pass'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        
+        $dbuser = $row["user_name"];
+        $dbpass = $row["password"];
+        if($name==$dbuser AND $pass==$dbpass)
+        {
+          if($name=="admin"){
+            echo "admin user";
+            header("location:adminDash.html"); 
+          }
+          else{
+          echo "staff user";  
+          header("location:staffDash.html"); 
+          }
+        }
+    
+
+        
+    }
+}
+else {
+      header("location:index.html");
+      echo "<script type='text/javascript'>alert('invalid');</script>";
+      }
+}  
+
+
+$conn->close();
+?>
