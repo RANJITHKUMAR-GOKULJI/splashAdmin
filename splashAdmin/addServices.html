@@ -335,7 +335,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+          <h1 class="h3 mb-2 text-gray-800">AddServices</h1>
           <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
           <!-- DataTales Example -->
@@ -348,52 +348,64 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Service Type</th>
-
-                      <th>Staff Id</th>
-                      <th>Activity Status</th>
-                      <th>Comments</th>
                       
+                      <th>Name</th>
+                      <td><input type="text" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></td>
                     </tr>
-                  </thead>
-                  
-                  
-                    
                     <tr>
-                    <td>1</td>
-                      <td><input type="text" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></td>
+                      <th>Service Type</th>
                       <td><button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Dropdown
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </td>
+                        Dropdown
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </td>
+                    </tr>
+                       <tr>
+                      <th>Staff Id</th>
                       <td><input type="text" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></td>
+                       </tr>
+                       <tr>
+                      <th>Activity Status</th>
                       <td><button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Dropdown
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </td>
-
-
+                        Dropdown
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </td>
+                       </tr>
+                       <tr>
+                      <th>Comments</th>
                       <td><div class="form-group">
   
-  <textarea class="form-control" rows="4" id="comment"></textarea>
-</div>
-</td>
-                      
-                    </tr>
-                  
-                    
+                        <textarea class="form-control" rows="4" id="comment"></textarea>
+                      </div>
+                      </td>
+                      </tr>
+                      <td>
+                        
+                        <div class="my-2"></div>
+                  <a href="#" class="btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Submit</span>
+                  </a></td>
+                  <td>
+                  <div class="my-2"></div>
+                  <a href="#" class="btn btn-danger btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-trash"></i>
+                    </span>
+                    <span class="text">Cancel</span>
+                  </a></td>
+                      </thead>
                   </tbody>
                 </table>
               </div>
